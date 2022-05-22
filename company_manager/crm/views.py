@@ -16,7 +16,7 @@ class CompanyCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = "company/create_company.html"
     form_class = CompanyForm
     success_url = reverse_lazy("index")
-    # Translators: This message is shown after successful creation of a company
+    # Translators: This message is shown after successful creation of a company.
     success_message = _("Company was created successfully.")
 
 
@@ -55,4 +55,3 @@ class EmployeeUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user.employee
-

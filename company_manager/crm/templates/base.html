@@ -18,37 +18,32 @@
     <div class="container-fluid">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{% url 'index' %}" role="button"  aria-expanded="false">
-              {% trans "Home" %}
-          </a>
-          <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">O nás</a></li>
-              <li><a class="dropdown-item" href='{% url "company_list" %}'>Seznam společností</a></li>
-              <li><a class="dropdown-item" href='{% url "create_company" %}'>Formulář nové společnosti</a></li>
-          </ul>
-      </li>
+              <a class="nav-link dropdown-toggle" href="{% url 'index' %}" role="button"  aria-expanded="false">
+                  {% trans "Home" %}
+              </a>
+            </li>
             <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {% trans "Companies" %}
-          </a>
-          <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href='{% url "company_list" %}'>{% trans "List of companies" %}</a></li>
-              {% if perms.crm.add_company %}
-              <li><a class="dropdown-item" href='{% url "create_company" %}'>{% trans "Create company" %}</a></li>
-              {% endif %}
-          </ul>
-      </li>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {% trans "Companies" %}
+              </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href='{% url "company_list" %}'>{% trans "List of companies" %}</a></li>
+                      {% if perms.crm.add_company %}
+                      <li><a class="dropdown-item" href='{% url "create_company" %}'>{% trans "Create company" %}</a></li>
+                      {% endif %}
+                  </ul>
+            </li>
             <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Opportunity
-          </a>
-          <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href='{% url "opportunity_list" %}'>List of the opportunities</a></li>
-              {% if perms.crm.add_opportunity %}
-              <li><a class="dropdown-item" href='{% url "create_opportunity" %}'>Create opportunity</a></li>
-              {% endif %}
-          </ul>
-      </li>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {% trans "Opportunity" %}
+              </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href='{% url "opportunity_list" %}'>{% trans "List of the opportunities" %}</a></li>
+                      {% if perms.crm.add_opportunity %}
+                      <li><a class="dropdown-item" href='{% url "create_opportunity" %}'>{% trans "Create opportunity" %}</a></li>
+                      {% endif %}
+                  </ul>
+            </li>
         </ul>
 
         {% if user.is_authenticated %}
