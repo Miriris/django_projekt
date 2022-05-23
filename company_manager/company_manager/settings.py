@@ -139,7 +139,7 @@ LOCALE_PATHS = ["locale"]
 
 LANGUAGES = [
     ["cs", "Czech"],
-    ["en", "English"]
+    ["en", "English"],
 ]
 
 django_heroku.settings(locals())

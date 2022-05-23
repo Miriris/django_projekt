@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.translation import gettext as _
 from crm.forms import CompanyForm
+from crm.forms import RegisterUserForm
 
 
 class IndexView(TemplateView):
@@ -55,3 +56,9 @@ class EmployeeUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user.employee
+
+
+class RegisterView(CreateView):
+    form_class = RegisterUserForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/register.html"
